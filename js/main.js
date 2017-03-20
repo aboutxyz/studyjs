@@ -16,12 +16,16 @@ $(document).ready(function(){
 		if ($mainOutput.html() == '0') {
             clearOutput();
         }
-		$mainOutput.append($(this).val());
-		$subOutput.append($(this).val());
+		if (($subOutput.html().length !=0) && (($subOutput.html().slice(-1)).indexOf('+') !=-1)) {
+			$mainOutput.html($(this).val());
+			$subOutput.append($(this).val());
+		}else{
+			$mainOutput.append($(this).val());
+			$subOutput.append($(this).val());
+		}
 	})
 	
 	$('.btn-operate').click(function() {
-		$mainOutput.append($(this).val());
 		$subOutput.append($(this).val());
 	})
 	
