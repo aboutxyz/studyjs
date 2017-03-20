@@ -16,13 +16,20 @@ $(document).ready(function(){
 		if ($mainOutput.html() == '0') {
             clearOutput();
         }
-		if (($subOutput.html().length !=0) && (($subOutput.html().slice(-1)).indexOf('+') !=-1)) {
+		if (($subOutput.html().length !=0) && (('+-*/').indexOf($subOutput.html().slice(-1)) !=-1)) {
 			$mainOutput.html($(this).val());
 			$subOutput.append($(this).val());
 		}else{
 			$mainOutput.append($(this).val());
 			$subOutput.append($(this).val());
 		}
+	})
+	
+	$('.brackets').click(function(){
+		if ($mainOutput.html() == '0') {
+            clearOutput();
+        }
+		$subOutput.append($(this).val());
 	})
 	
 	$('.btn-operate').click(function() {
