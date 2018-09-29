@@ -1,6 +1,8 @@
 #coding:utf-8
-
 from flask import Flask,render_template
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')
 
 app = Flask(__name__)
 

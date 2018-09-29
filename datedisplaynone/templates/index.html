@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table { border-collapse: collapse;}
+		table tr td{ border:solid #ccc;}
+	</style>
+	<script>
+		window.onload=function (){
+			trlist = document.getElementsByTagName("td");
+			var d1 = new Date();
+			for (var i=0;i<trlist.length;i++){
+				var d2 = new Date(trlist[i].innerHTML.substring(0,9).replace("-", "/").replace("-", "/"));
+				if (d2<d1){trlist[i].parentNode.style.display="none"}
+			}
+		}
+	</script>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>2018-9-27(p)</td>
+			<td>2018-9-27(e)</td>
+			<td>2018-9-28(p)</td>
+			<td>2018-9-29(p)</td>
+			<td>2018-9-30(p)</td>
+		</tr>
+		<tr>
+			<td>2018-9-29(p)</td>
+			<td>2018-9-29(e)</td>
+			<td>2018-9-28(p)</td>
+			<td>2018-9-29(p)</td>
+			<td>2018-9-30(p)</td>
+		</tr>
+		<tr>
+			<td>2018-9-26(p)</td>
+			<td>2018-9-30(e)</td>
+			<td>2018-9-28(p)</td>
+			<td>2018-9-29(p)</td>
+			<td>2018-9-30(p)</td>
+		</tr>
+	</table>
+</body>
+</html>
